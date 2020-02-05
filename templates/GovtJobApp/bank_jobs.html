@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Jobs</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<style>
+    #tab1   {
+        width: 700px;
+        margin-left: 550px;
+        float: right;
+        margin-right: 100px;
+    }
+</style>
+<body>
+    <div class="container-fluid">
+        <center><h1 style="font-family: 'Baskerville Old Face'; margin-top: 5px; border: 1px solid black; color: white; background-color: black">Bank Jobs Details</h1></center>
+            <table class="table table-dark table-bordered table-hover text-center" style="margin-top: 50px" id="tab1">
+                <thead>
+                    <th>Bank Name</th>
+                    <th>Location</th>
+                    <th>Qualification</th>
+                    <th>Age</th>
+                    <th>Total_vacancies</th>
+                </thead>
+                <tbody>
+                    {% for data in bank_data %}
+                        <tr>
+                            <td>{{ data.bank_name }}</td>
+                            <td>{{ data.location }}</td>
+                            <td>{{ data.qualification }}</td>
+                            <td>{{ data.age }}</td>
+                            <td>{{ data.total_vacancies }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    <a href="filterjobs">filter</a>
+</body>
+</html>

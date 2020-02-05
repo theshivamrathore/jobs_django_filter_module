@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<head>
+    <title>filter</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<body>
+<form action="" method="get" style="margin-top: 10px">
+    {{ f.form }}
+    <input type="submit" class="btn-success">
+</form>
+<table class="table text-center table-bordered table-dark table-hover" style="font-family: 'Baskerville Old Face'; width: 1000px; margin: auto">
+    <thead>
+        <th>Bank Name</th>
+        <th>Location</th>
+        <th>Qualification</th>
+        <th>Age</th>
+        <th>Total Vacancies</th>
+    </thead>
+    <tbody>
+        {% for object in f.qs %}
+            <tr>
+            <td>{{ object.bank_name }}</td>
+            <td>{{ object.location }}</td>
+            <td>{{ object.qualification }}</td>
+            <td>{{ object.age }}</td>
+            <td>{{ object.total_vacancies }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

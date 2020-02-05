@@ -1,0 +1,17 @@
+database
+==========
+database name = jobprojectdb
+user = root
+password = root
+
+admin 
+=======
+user - jobproject
+user - jobproject
+
+module used
+=============
+django-filter
+django==2.1
+python = 3.7
+mysqlclient

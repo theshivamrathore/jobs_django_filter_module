@@ -1,0 +1,34 @@
+{% load static %}
+<html>
+<head>
+    <title>Railway Jobs</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<form action="" method="get" style="margin-top: 10px">
+    {{ railway_data.form }}
+    <input type="submit" value="search" class="btn-success">
+</form>
+<center><h1 style="font-family: 'Baskerville Old Face'; border: 1px solid black; color: white; background-color: black">Railway Job Details</h1></center>
+<table class="table table-dark table-hover table-bordered text-center" style="margin: auto; width: 1200px;margin-top: 25px">
+    <thead>
+    <th>POSITION</th>
+    <th>LOCATION</th>
+    <th>QUALIFICATION</th>
+    <th>AGE</th>
+    <th>TOTAL VACANCIES</th>
+    </thead>
+    {% for data in railway_data.qs %}
+        <tbody>
+        <tr>
+            <td>{{ data.position }}</td>
+            <td>{{ data.location }}</td>
+            <td>{{ data.qualification }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.total_vacancies }}</td>
+        </tr>
+        </tbody>
+
+    {% endfor %}
+
+</table>
+</html>

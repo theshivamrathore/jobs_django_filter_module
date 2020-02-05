@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GovtJobs_Home</title>
+     <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <a class="navbar-brand" href="/#/">Logo</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="govtjob_home">Govt Jobs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Private Jobs</a>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid" style="margin-top:80px">
+    <a href="/#/">Jobportal</a> >> <a href="govtjob_home">Government Jobs</a>
+</div>
+
+
+<!-- Government job Category Starts -->
+<div class="container-fluid" style="margin-top: 10px">
+    <table class="table table-bordered text-center table-dark table-hover ta" style="width: 600px">
+        <thead>
+        <th>Top Category Govt Jobs</th>
+        <th>More Details</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bank Jobs</td>
+                <td><a href="filter">For More details</a></td>
+            </tr>
+            <tr>
+                <td>Railway Jobs</td>
+                <td><a href="railwayjobs_details">For More details</a></td>
+            </tr><tr>
+                <td>Poice Jobs</td>
+                <td><a href="#">For More details</a></td>
+            </tr><tr>
+                <td>Forest Jobs</td>
+                <td><a href="#">For More details</a></td>
+            </tr><tr>
+                <td>Teaching Jobs</td>
+                <td><a href="#">For More details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Government job Category Ends -->
+</body>
+</html>
