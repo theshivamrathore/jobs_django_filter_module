@@ -21,6 +21,8 @@ urlpatterns = [
     path('govtjob_home',views.govtjobs_home_view),
     path('bank_jobs',views.bankjobs_details_view),
     path('filter',views.filter_view),
-    path('railwayjobs_details',views.railwayjob_view)
+    path('railwayjobs_details',views.railwayjob_view),
+    path('policejobs_details',views.policejob_view),
+    path('forestjobs_details',views.forestjob_view)
 ]
 

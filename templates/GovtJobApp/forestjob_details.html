@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>ForestJob Details</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<form method="post" class="form">
+    {% csrf_token %}
+    {{ fform }}
+
+    <input type="submit" value="Filter">
+</form>
+<body>
+{% if data %}
+    <table class="table table-dark table-bordered table-hover text-center" style="width: 1000px; margin: auto;margin-top: 60px">
+    <thead>
+    <th>Position</th>
+    <th>Location</th>
+    <th>Qualification</th>
+    <th>Age</th>
+    <th>Total  Vacancy</th>
+    </thead>
+    <tbody style="text-align: center">
+    {% for foo in data %}
+        <tr>
+        <td>{{ foo.position}}</td>
+        <td>{{ foo.location }}</td>
+        <td>{{ foo.qualification }}</td>
+        <td>{{ foo.age }}</td>
+        <td>{{ foo.total_vacancies }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+    {% else %}
+    <h2>No data Available</h2>
+{% endif %}
+</table>
+</body>
+</html>

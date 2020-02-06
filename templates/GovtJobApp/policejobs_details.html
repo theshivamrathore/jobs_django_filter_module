@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Police Jobs Details</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.css' %}">
+</head>
+<style>
+    #lable{
+        font-family: "Baskerville Old Face";
+        font-size: 20px;
+        margin-left: 10px;
+        color: white;
+        background-color: black;
+        padding: 2px;
+    }
+</style>
+<body>
+<br>
+<form method="post">
+    {% csrf_token %}
+    <!-- Location dropdown -->
+    <label for="featured" id="lable">Select Location: </label>
+    <select name="dropdown" id="">
+        <option value="#">---select---</option>
+        <option value="hyderabad">HYDERABAD</option>
+        <option value="banglore">BANGLORE</option>
+    </select>
+
+    <!-- Qualification dropdown -->
+    <label id="lable">Select Qualification : </label>
+    <select name="dropdown1" id="">
+        <option value="#">---select---</option>
+        <option value="BTECH">BTECH</option>
+        <option value="12th">12th</option>
+    </select>
+    <input type="submit" value="filter" class="btn btn-success">
+
+</form>
+<h1 style="font-size: 30px;font-family: 'Baskerville Old Face';text-align: center;">Police Job Details</h1>
+<table class="table table-dark table-bordered table-hover text-center" style="width: 1000px; margin: auto;margin-top: 60px">
+    <thead>
+    <th>Position</th>
+    <th>Location</th>
+    <th>Qualification</th>
+    <th>Age</th>
+    <th>Total  Vacancy</th>
+    </thead>
+    <tbody>
+    {% for listing in listings %}
+        <tr>
+        <td>{{ listing.position}}</td>
+        <td>{{ listing.location }}</td>
+        <td>{{ listing.qualification }}</td>
+        <td>{{ listing.age }}</td>
+        <td>{{ listing.total_vacancies }}</td>
+        </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+</body></html>
